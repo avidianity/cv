@@ -4,9 +4,9 @@
   "description": "John Michael Manlupig CV site",
   "main": "index.js",
   "scripts": {
-    "build:css": "tailwindcss -i ./src/tailwind.css -o ./style.css --minify",
-    "dev:css": "tailwindcss -i ./src/tailwind.css -o ./style.css --watch",
-    "build": "npm run build:css"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,10 @@
   "bugs": {
     "url": "https://github.com/avidianity/cv/issues"
   },
-  "homepage": "https://github.com/avidianity/cv#readme"
+  "homepage": "https://github.com/avidianity/cv#readme",
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.2.2",
+    "tailwindcss": "^4.2.2",
+    "vite": "^8.0.3"
+  }
 }

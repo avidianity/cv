@@ -1,7 +1,6 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  mode: 'jit',
-  purge: ['./index.html'],
-  darkMode: false,
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx,html}'],
   theme: {
     extend: {
       colors: {
@@ -33,9 +32,6 @@ module.exports = {
         reveal: 'reveal 700ms cubic-bezier(0.22, 1, 0.36, 1) both'
       }
     }
-  },
-  variants: {
-    extend: {}
   },
   plugins: []
 };
