@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-paper text-gray-700;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .hero-bg {
+    background-image: linear-gradient(132deg, #12253f 0%, #1f3658 50%, #2f4f76 100%);
+  }
+
+  .section-title {
+    @apply font-display text-xs font-semibold uppercase tracking-widest text-slateblue;
+  }
+
+  .panel {
+    @apply rounded-3xl border border-mist bg-white shadow-soft;
+  }
+
+  .timeline-item {
+    @apply relative border-l-2 border-mist pl-6 pb-8;
+  }
+
+  .timeline-item:last-child {
+    @apply pb-0;
+  }
+
+  .timeline-dot {
+    @apply absolute -left-2 top-2 h-3 w-3 rounded-full bg-accent;
+  }
+
+  .skill-pill {
+    @apply rounded-full border border-mist bg-white px-3 py-1 text-xs font-semibold text-gray-700;
+  }
+
+  .contact-link {
+    @apply text-sm font-medium text-white hover:text-yellow-100;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
