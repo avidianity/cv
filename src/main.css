@@ -61,3 +61,230 @@
     scroll-behavior: auto !important;
   }
 }
+
+@media print {
+  @page {
+    margin: 0.35in 0.4in;
+    size: A4;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  html {
+    font-size: 10.5px;
+  }
+
+  body {
+    background: white !important;
+  }
+
+  /* ---- Header ---- */
+  .hero-bg {
+    background-image: linear-gradient(132deg, #12253f 0%, #1f3658 50%, #2f4f76 100%) !important;
+  }
+
+  header > div {
+    padding: 1rem 1.5rem !important;
+  }
+
+  /* Force header grid to 12 columns */
+  header .grid {
+    display: grid !important;
+    grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+    align-items: center !important;
+    gap: 1rem !important;
+  }
+
+  header .lg\:col-span-5:first-child {
+    grid-column: span 5 / span 5 !important;
+  }
+
+  header .lg\:col-span-2 {
+    grid-column: span 2 / span 2 !important;
+    justify-self: center !important;
+  }
+
+  header .lg\:col-span-5:last-child {
+    grid-column: span 5 / span 5 !important;
+    text-align: right !important;
+  }
+
+  /* Smaller header text */
+  header h1 {
+    font-size: 2rem !important;
+    margin-top: 0.25rem !important;
+  }
+
+  header .section-title {
+    margin-bottom: 0 !important;
+  }
+
+  /* Smaller portrait */
+  header figure {
+    width: 5.5rem !important;
+    height: 5.5rem !important;
+    box-shadow: none !important;
+  }
+
+  /* Compact tag pills in header */
+  header ul {
+    margin-top: 0.5rem !important;
+    gap: 0.25rem !important;
+  }
+
+  /* ---- Main content ---- */
+  main {
+    margin-top: -0.25rem !important;
+    padding-bottom: 0 !important;
+  }
+
+  .panel {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0.75rem 1rem !important;
+    border-radius: 0 !important;
+  }
+
+  /* Force main content grid to 12-col */
+  .panel > .grid {
+    display: grid !important;
+    grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+    gap: 1.25rem !important;
+  }
+
+  .panel > .grid > section.lg\:col-span-7,
+  .panel > .grid > .lg\:col-span-7 {
+    grid-column: span 7 / span 7 !important;
+  }
+
+  .panel > .grid > aside.lg\:col-span-5,
+  .panel > .grid > .lg\:col-span-5 {
+    grid-column: span 5 / span 5 !important;
+  }
+
+  /* ---- Animations off ---- */
+  .animate-float {
+    animation: none !important;
+  }
+
+  .animate-reveal {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+
+  .shadow-soft {
+    box-shadow: none !important;
+  }
+
+  /* ---- Tighten vertical spacing ---- */
+  .space-y-10 > * + * {
+    margin-top: 1rem !important;
+  }
+
+  .space-y-8 > * + * {
+    margin-top: 0.6rem !important;
+  }
+
+  .space-y-5 > * + * {
+    margin-top: 0.5rem !important;
+  }
+
+  .space-y-4 > * + * {
+    margin-top: 0.35rem !important;
+  }
+
+  .space-y-2 > * + * {
+    margin-top: 0.15rem !important;
+  }
+
+  .gap-12 {
+    gap: 1rem !important;
+  }
+
+  /* Timeline tighter */
+  .timeline-item {
+    padding-bottom: 0.5rem !important;
+    padding-left: 1rem !important;
+  }
+
+  .timeline-item:last-child {
+    padding-bottom: 0 !important;
+  }
+
+  .timeline-item ul {
+    margin-top: 0.25rem !important;
+  }
+
+  .timeline-item li + li {
+    margin-top: 0.1rem !important;
+  }
+
+  /* ---- Page break control ---- */
+  article, section, .timeline-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Allow page break before sidebar if needed */
+  aside {
+    break-before: avoid;
+  }
+
+  /* ---- Links ---- */
+  a {
+    text-decoration: none !important;
+    color: inherit !important;
+  }
+
+  .contact-link {
+    color: white !important;
+  }
+
+  /* ---- Component styles ---- */
+  .skill-pill {
+    border: 1px solid #dce4ec !important;
+    background: white !important;
+    padding: 0.2rem 0.5rem !important;
+    font-size: 0.7rem !important;
+  }
+
+  /* Contact section dark bg */
+  section.rounded-2xl.bg-ink {
+    background-color: #12253f !important;
+    padding: 0.75rem 1rem !important;
+    border-radius: 0.75rem !important;
+  }
+
+  section.rounded-2xl.bg-ink .space-y-2 > * + * {
+    margin-top: 0.1rem !important;
+  }
+
+  /* Miscellaneous cards */
+  .rounded-2xl.border.border-mist {
+    padding: 0.5rem 0.75rem !important;
+    border-radius: 0.5rem !important;
+  }
+
+  /* Section titles tighter */
+  .section-title {
+    margin-bottom: 0.25rem !important;
+  }
+
+  /* Experience title/date row */
+  .timeline-item h3 {
+    font-size: 1rem !important;
+  }
+
+  /* Reduce leading */
+  .leading-relaxed {
+    line-height: 1.5 !important;
+  }
+
+  /* Hide the max-w-6xl constraint for tighter print */
+  .max-w-6xl {
+    max-width: 100% !important;
+  }
+}
